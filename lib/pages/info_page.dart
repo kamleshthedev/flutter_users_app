@@ -17,13 +17,16 @@ class InfoPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 24),
-            child: CircleAvatar(
-              maxRadius: 46,
-              backgroundColor: kSecondaryColor,
-              child: Icon(
-                Icons.account_circle,
-                color: Colors.white,
-                size: 70,
+            child: Hero(
+              tag: '${user?.id}',
+              child: CircleAvatar(
+                maxRadius: 46,
+                backgroundColor: kSecondaryColor,
+                child: Icon(
+                  Icons.account_circle,
+                  color: Colors.white,
+                  size: 70,
+                ),
               ),
             ),
           ),

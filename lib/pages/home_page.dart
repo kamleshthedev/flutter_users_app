@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          child: _users.length <= 0 
+          child: _users.length <= 0
               ? Center(child: CircularProgressIndicator(color: kSecondaryColor))
               : Column(
                   children: [
@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
             );
           },
           child: UserCard(
+            id: users[idx].id!.toString(),
             name: users[idx].name!,
             email: users[idx].email!,
           ),

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import '../theme/theme_index.dart';
 
 class UserCard extends StatelessWidget {
+  final String id;
   final String name;
   final String email;
 
   const UserCard({
     Key? key,
+    required this.id,
     required this.name,
     required this.email,
   }) : super(key: key);
@@ -20,11 +22,14 @@ class UserCard extends StatelessWidget {
         elevation: 2,
         shadowColor: Colors.grey.shade300,
         child: ListTile(
-          leading: CircleAvatar(
-            backgroundColor: kSecondaryColor,
-            child: Icon(
-              Icons.account_circle,
-              color: Colors.white,
+          leading: Hero(
+            tag: id,
+            child: CircleAvatar(
+              backgroundColor: kSecondaryColor,
+              child: Icon(
+                Icons.account_circle,
+                color: Colors.white,
+              ),
             ),
           ),
           title: Text(
@@ -49,4 +54,3 @@ class UserCard extends StatelessWidget {
     );
   }
 }
-
